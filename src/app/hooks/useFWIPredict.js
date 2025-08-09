@@ -1,4 +1,4 @@
-// hooks/useFWIPredict.js
+
 import { useState, useEffect } from 'react';
 
 export function useFWIPredict(city) {

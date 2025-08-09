@@ -1,0 +1,82 @@
+@import '../globals.css'; 
+
+.weatherContainer {
+    background-color: var(--light_gray);
+    box-sizing: border-box;
+    padding: 0.5rem 1.5rem 0.5rem 2rem;
+    height: 100vh;
+}
+
+.logoContainer img{
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+}
+.logoContainer{
+    padding: 0.4rem;
+}
+
+.text {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.3rem;
+}
+.text p {
+    font-size: 1.3rem;
+    color: black;
+    cursor: pointer;
+}
+
+.text p:last-child {
+    color: gray;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 2.5rem;
+    row-gap: 2.2rem;
+    column-gap: 0.5rem;
+}
+
+.card{
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem 0.5rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    color: white;
+    width: 270px;
+}
+
+.green {
+    background-color: var(--green_card);
+}
+
+.yellow {
+    background-color: var(--yellow_card);
+}
+.orange {
+    background-color: var(--orange_card);
+}
+.red {
+    background-color: var(--red_card);
+}
+
+.info h3 {
+    font-weight: 500;
+}
+.info p {
+    font-weight: 600;
+}
+
+.note {
+    position: relative;
+    top: 6rem;
+}
+.note span {
+    font-weight: 650;
+    color: green;
+}

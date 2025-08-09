@@ -3,17 +3,20 @@ import { useState } from "react"
 import { useFWIPredict } from "../hooks/useFWIPredict";
 import Fwi from "./Fwi";
 import Weather from "./Weather";
+import styles from '@/app/modules/dashboard.module.css'
+import Image from "next/image";
 
 export default function Dashboard() {
     const [city, setCity] = useState("bejaia")
     const { data, loading, error, refetch } = useFWIPredict(city)
+
+    console.log('Dashboard component rendered with data:', data);
     
-    // This will now show the data correctly after it loads
-    console.log('Dashboard data:', data);
+    const weatherData = data?.raw_data.current
 
     return (
-        <>
-          <div className="fwiContainer">
+        <div className={styles.dashboardContainer}>
+          <div className={styles.fwiContainer}>
             <select name="city" value={city} onChange={(e)=> setCity(e.target.value)}>
                <option value="Algiers">Algiers</option>
                <option value="bejaia">Bejaia</option>
@@ -24,25 +27,19 @@ export default function Dashboard() {
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
 
-            <button onClick={refetch}>Refresh</button>
-
            
-            {data && <Fwi fwiData={data.prediction} loading={loading}/>}
+           <Fwi fwiData={data?.prediction} loading={loading} city={city}/>
+
+            <Image alt="logo" src={'/logo.png'} height={142} width={468} />
           </div>
 
-          <div className="weatherContainer">
-            {data && (
+          <div className={styles.weatherContainer}>
               <Weather 
-                weatherData={{
-                  temperature: data.Temperature,
-                  humidity: data.RH,
-                  windSpeed: data.Ws,
-                  rain: data.Rain
-                }} 
+                weatherData={weatherData} 
                 loading={loading}
+                fwiData={data?.prediction}
               />
-            )}
           </div>
-        </>
+        </div>
     )
 }

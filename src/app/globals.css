@@ -1,9 +1,9 @@
 :root {
   /* Card colors with 80% opacity (converted to rgba) */
-  --red_card: rgba(223, 32, 26, 0.8);      /* #DF201A */
-  --green_card: rgba(31, 111, 54, 0.8);    /* #1F6F36 */
-  --yellow_card: rgba(248, 176, 16, 0.8);  /* #F8B010 */
-  --orange_card: rgba(244, 129, 13, 0.8);  /* #F4810D */
+  --red_card: rgba(223, 32, 26, 0.95);      /* #DF201A */
+  --green_card: rgba(31, 111, 54, 0.95);    /* #1F6F36 */
+  --yellow_card: rgba(248, 176, 16, 0.95);  /* #F8B010 */
+  --orange_card: rgba(244, 129, 13, 0.95);  /* #F4810D */
 
   /* Solid color */
   --light_gray: #ECEFF1;
@@ -13,4 +13,5 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100vh;
 }

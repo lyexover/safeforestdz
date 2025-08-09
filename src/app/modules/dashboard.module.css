@@ -1,0 +1,38 @@
+.dashboardContainer{
+    display: flex;
+}
+
+.fwiContainer{
+    flex: 1;
+    padding: 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    bottom: 1.5rem;
+}
+
+.weatherContainer{
+    flex: 1.8;
+}
+
+.fwiContainer select{
+    width: 75%;
+    margin: 0 auto; 
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1rem;
+}
+
+.fwiContainer>img {
+    width: 230px;
+    height: auto;
+    position: absolute; 
+    bottom: 0;
+}
