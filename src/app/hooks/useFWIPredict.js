@@ -12,7 +12,7 @@ export function useFWIPredict(city) {
     setLoading(true);
     setError(null);
     
-    fetch(`http://localhost:8000/predict?city=${city}`, {
+    fetch(`https://safeforestdz-api.onrender.com/predict?city=${city}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     })
