@@ -15,17 +15,34 @@ export default function Dashboard() {
     const weatherData = data?.raw_data.current
 
     return (
+
+      <>
+
+         <div className={styles.mobileHeader}>
+          <Image alt="logo" src={'/logo.png'} height={142} width={468} />
+           <select name="city" value={city} onChange={(e)=> setCity(e.target.value)}>
+               <option value="Algiers">Algiers</option>
+               <option value="bejaia">Bejaia</option>
+               <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
+               <option value="Tizi Ouzou">Tizi Ouzou</option>
+                <option value="skikda">Skikda</option>
+               <option value="el tarf">El Tarf</option>
+               <option value="jijel">Jijel</option>
+            </select>
+         </div>
+      
         <div className={styles.dashboardContainer}>
+
           <div className={styles.fwiContainer}>
             <select name="city" value={city} onChange={(e)=> setCity(e.target.value)}>
                <option value="Algiers">Algiers</option>
                <option value="bejaia">Bejaia</option>
                <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
                <option value="Tizi Ouzou">Tizi Ouzou</option>
+               <option value="skikda">Skikda</option>
+               <option value="el tarf">El Tarf</option>
+               <option value="jijel">Jijel</option>
             </select>
-
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
 
            
            <Fwi fwiData={data?.prediction} loading={loading} city={city}/>
@@ -41,5 +58,7 @@ export default function Dashboard() {
               />
           </div>
         </div>
+
+        </>
     )
 }

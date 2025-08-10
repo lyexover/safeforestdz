@@ -9,9 +9,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     position: relative;
-    bottom: 1.5rem;
+    bottom: 1.8rem;
+    /* background: linear-gradient(135deg, #95c999 0%, #6b6b6b 100%); */
+    min-height: 100vh;
 }
 
 .weatherContainer{
@@ -28,11 +30,72 @@
     box-sizing: border-box;
     display: block;
     font-size: 1rem;
+    background: rgba(232, 232, 232, 0.8);
+    color: #333;
 }
 
 .fwiContainer>img {
-    width: 230px;
+    width: 210px;
     height: auto;
     position: absolute; 
-    bottom: 0;
+    bottom: -1rem;
+}
+
+/* FWI Card Background */
+.fwiCard {
+    background: rgba(228, 228, 228, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(115, 115, 115, 0.2);
+    color: black;
+}
+
+.mobileHeader {
+    display: none;
+}
+
+@media (max-width: 480px) {
+   .mobileHeader {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 1rem;
+ background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+     color: white;
+   }
+   .mobileHeader img {
+        width: 150px;
+        height: auto;
+   }
+   .mobileHeader select {
+        width: fit-content;
+        padding: 8px;
+        font-size: 0.8rem;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        border: none;
+        outline: none;
+   }
+   .dashboardContainer {
+        flex-direction: column;
+   }
+   .fwiContainer {
+        padding: 2.5rem 0.5rem;
+        position: relative;
+        bottom: 0;
+        min-height: auto;
+   }
+   .fwiContainer>img{
+    display: none;
+   }
+   .fwiContainer select{
+    display: none;
+}
+
+.fwiCard{
+    padding: 2rem 3rem;
+}
 }

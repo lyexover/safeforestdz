@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../modules/fwi.module.css";
+import dashboardStyles from "../modules/dashboard.module.css";
 import { Loader2 } from "lucide-react";
 
 export default function Fwi({fwiData, loading, city}) {
@@ -19,7 +20,7 @@ export default function Fwi({fwiData, loading, city}) {
   // Show loading state
   if (loading) {
     return (
-      <div className={styles.fwiContainer}>
+      <div className={dashboardStyles.fwiCard}>
         <div className={styles.loadingState}>
           <Loader2 className={styles.spinner} />
           <p className={styles.loadingText}>Loading fire weather data...</p>
@@ -29,19 +30,21 @@ export default function Fwi({fwiData, loading, city}) {
   }
 
   return (
-    <div className={styles.fwiContainer}>
-      <div className={styles.mainInfo}>
-        <Image src={`/${category}.png`} width={110} height={164} alt="indicator" />
-        <div className={styles.text}>
-          <p>{fwiData?.toFixed(2)}</p>
-          <p>{category} Danger</p>
+    <div className={dashboardStyles.fwiCard}>
+      <div className={styles.fwiContainer}>
+        <div className={styles.mainInfo}>
+          <Image src={`/${category}.png`} width={110} height={164} alt="indicator" />
+          <div className={styles.text}>
+            <p>{fwiData?.toFixed(2)}</p>
+            <p>{category} Danger</p>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.secondaryInfo}>
-        <span>{day}</span>
-        <span>{time}</span>
-        <p>{city}</p>
+        <div className={styles.secondaryInfo}>
+          <span>{day}</span>
+          <span>{time}</span>
+          <p>{city}</p>
+        </div>
       </div>
     </div>
   )
